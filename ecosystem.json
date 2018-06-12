@@ -15,11 +15,10 @@
     "production": {
       "user": "root",
       "host": ["140.143.244.18"],
-      "port": "39999", 
       "ref": "origin/master",
       "repo": "git@github.com:chenjinxinlove/ice.git",
       "path": "/home/chenjinxin/www/ice/production",
-      "ssh_options": "HStrictHostKeyCheckingn=no",
+      "ssh_options": "StrictHostKeyChecking=no",
       "pre-deploy-local": "echo c",
       "env": {
         "NODE_ENV": "production"
