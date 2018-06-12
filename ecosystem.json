@@ -15,6 +15,7 @@
     "production": {
       "user": "root",
       "host": ["140.143.244.18"],
+      "port": "39999", 
       "ref": "origin/master",
       "repo": "git@github.com:chenjinxinlove/ice.git",
       "path": "/home/chenjinxin/www/ice/production",
