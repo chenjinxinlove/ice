@@ -1,0 +1,60 @@
+Arguments: 
+  /usr/local/bin/node /usr/local/bin/yarn add sha1 --save
+
+PATH: 
+  /usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin
+
+Yarn version: 
+  1.5.1
+
+Node version: 
+  10.5.0
+
+Platform: 
+  darwin x64
+
+npm manifest: 
+  {
+    "name": "ice",
+    "version": "1.1.0",
+    "description": "Nuxt.js project",
+    "author": "chenjinxinlove <505150704@qq.com>",
+    "private": true,
+    "scripts": {
+      "dev": "backpack dev",
+      "build": "nuxt build && backpack build",
+      "start": "cross-env NODE_ENV=production node build/main.js",
+      "precommit": "npm run lint",
+      "lint": "eslint --ext .js,.vue --ignore-path .gitignore ."
+    },
+    "dependencies": {
+      "cross-env": "^5.0.1",
+      "koa": "^2.4.1",
+      "nuxt": "latest",
+      "ramda": "^0.25.0",
+      "source-map-support": "^0.4.15"
+    },
+    "devDependencies": {
+      "babel-eslint": "^7.1.1",
+      "backpack-core": "^0.3.0",
+      "eslint": "^3.13.1",
+      "eslint-loader": "^1.9.0",
+      "eslint-config-standard": "^10.2.1",
+      "eslint-plugin-html": "^2.0.3",
+      "eslint-plugin-import": "^2.2.0",
+      "eslint-plugin-node": "^4.2.2",
+      "eslint-plugin-promise": "^3.4.0",
+      "eslint-plugin-standard": "^3.0.1",
+      "nodemon": "^1.11.0",
+      "scmp": "^2.0.0"
+    }
+  }
+
+yarn manifest: 
+  No manifest
+
+Lockfile: 
+  No lockfile
+
+Trace: 
+  Error: ENOENT: no such file or directory, copyfile '/Users/chenjinxin/Library/Caches/Yarn/v1/npm-inherits-2.0.1-b17d08d326b4423e568eff719f91b0b1cbdf69f1/LICENSE' -> '/Users/chenjinxin/chenjinxin/code/node/ice/node_modules/assert/node_modules/inherits/LICENSE'
