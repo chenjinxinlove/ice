@@ -3,7 +3,8 @@ const tip = 'sjdnlsjdfljsdjlsdjljdlfjljdljsdljldjfljdlfj'
 export default async (ctx, next) => {
   const message = ctx.weixin
 
-  console.log(message)
+  // console.log(message)
+  if ()
 
   ctx.body = tip
 }

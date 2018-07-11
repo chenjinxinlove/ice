@@ -35,7 +35,7 @@ function formatMessage(result) {
       } else {
         message[key] = []
 
-        for (let j = 0;  j < item.length; j++) {
+        for (let j = 0; j < item.length; j++) {
           message[key].push(formatMessage(item[j]))
         }
       }
