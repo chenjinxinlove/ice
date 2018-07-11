@@ -1,7 +1,4 @@
 const mongoose = require('mongoose')
-import default from '../../../.nuxt/App';
-import async from '../../../.nuxt/server';
-import { async } from '../../../.nuxt/utils';
 const Schema = mongoose.Schema
 
 const TokenSchema = new mongoose.Schema({
