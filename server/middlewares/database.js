@@ -1,7 +1,8 @@
-const mongoose = require('mongoose')
+
 import fs from 'fs'
 import config from '../config'
 import {resolve} from 'path'
+const mongoose = require('mongoose')
 
 const models = resolve(__dirname, '../database/schema')
 
@@ -12,7 +13,7 @@ fs.readdirSync(models)
 export const database = app => {
   mongoose.set('debug', true)
 
-  mongoose.connect(config.db)
+  mongoose.connect('mongodb://localhos:27017/ice')
 
   // mongoose.connection.on('disconnected', () => {
   //   mongoose.connection(config.db)

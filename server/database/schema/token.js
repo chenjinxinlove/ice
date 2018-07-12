@@ -1,7 +1,7 @@
 const mongoose = require('mongoose')
 const Schema = mongoose.Schema
 
-const TokenSchema = new mongoose.Schema({
+const TokenSchema = new Schema({
   name: String,
   token: String,
   expires_in: Number,
@@ -13,7 +13,7 @@ const TokenSchema = new mongoose.Schema({
     updatedAt: {
       type: Date,
       default: Date.now()
-    },
+    }
   }
 })
 

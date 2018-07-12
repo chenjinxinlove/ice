@@ -54,14 +54,6 @@ const api = {
   }
 }
 
-function statFile(filepath) {
-  return new Promise((resolve, reject) => {
-    fs.stat(filepath, (err, stat) => {
-      if (err) reject(err)
-      else resolve(stat)
-    })
-  })
-}
 export default class Wechat {
   constructor(opts) {
     this.opts = Object.assign({}, opts)
@@ -70,7 +62,8 @@ export default class Wechat {
     this.appSecret = opts.appSecret
     this.getAccessToken = opts.getAccessToken
     this.saveAccessToken = opts.saveAccessToken
-
+    this.getTicket = opts.getTicket
+    this.saveTicket = opts.saveTicket
     this.fetchAccessToken()
   }
 
@@ -86,9 +79,10 @@ export default class Wechat {
   }
 
   async fetchAccessToken() {
+    console.log('ddd')
     let data = await this.getAccessToken()
-
-    if (!this.isValidAccessToken(data)) {
+    console.log(data,'ddd1')
+    if (!this.isValidToken(data)) {
       data = await this.updateAccessToken()
     }
     await this.saveAccessToken(data)
@@ -107,8 +101,30 @@ export default class Wechat {
 
     return data
   }
+  async fetchTicket(token) {
+    let data = await this.getTicket()
 
-  isValidAccessToken(data) {
+    if (!this.isValidToken(data, 'ticket')) {
+      data = await this.updateTicket(token)
+    }
+
+    await this.saveTicket(data)
+
+    return data
+  }
+
+  async updateTicket(token) {
+    const url = api.ticket.get + '&access_token=' + token + '&type=jsapi'
+
+    let data = await this.request({url: url})
+    const now = (new Date().getTime())
+    const expiresIn = now + (data.expires_in - 20) * 1000
+
+    data.expires_in = expiresIn
+
+    return data
+  }
+  isValidToken(data) {
     if (!data || data.access_token || !data.expires_in) {
       return false
     }
