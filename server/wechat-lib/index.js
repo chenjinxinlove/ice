@@ -79,9 +79,7 @@ export default class Wechat {
   }
 
   async fetchAccessToken() {
-    console.log('ddd')
     let data = await this.getAccessToken()
-    console.log(data,'ddd1')
     if (!this.isValidToken(data)) {
       data = await this.updateAccessToken()
     }

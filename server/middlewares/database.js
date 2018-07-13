@@ -13,17 +13,17 @@ fs.readdirSync(models)
 export const database = app => {
   mongoose.set('debug', true)
 
-  mongoose.connect('mongodb://localhos:27017/ice')
+  mongoose.connect(config.db)
 
-  // mongoose.connection.on('disconnected', () => {
-  //   mongoose.connection(config.db)
-  // })
+  mongoose.connection.on('disconnected', () => {
+    mongoose.connection(config.db)
+  })
 
-  // mongoose.connection.on('error', err => {
-  //   console.error(err)
-  // })
+  mongoose.connection.on('error', err => {
+    console.error(err)
+  })
 
-  // mongoose.connection.on('open', async => {
-  //   console.log('connected to mongodb', config.db)
-  // })
+  mongoose.connection.on('open', async => {
+    console.log('connected to mongodb', config.db)
+  })
 }

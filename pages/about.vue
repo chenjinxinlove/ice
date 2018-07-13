@@ -17,10 +17,10 @@ export default {
     }
   },
   beforeMount() {
-    const wx = window.w
+    const wx = window.wx
     const url = window.location
 
-    this.$store.dispatch('getWechatSignature', url)
+    this.$store.dispatch('getWechatSignature', encodeURIComponent(url))
     .then(res => {
       if (res.data.success) {
         const params = res.data.params

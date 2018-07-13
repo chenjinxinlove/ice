@@ -6,6 +6,7 @@ import getters from './getters'
 const createStore = () => {
   return new Vuex.Store({
     state: {
+      baseUrl: 'http://veyuxb.natappfree.cc'
     },
     getters,
     actions,
