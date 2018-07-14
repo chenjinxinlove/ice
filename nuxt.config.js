@@ -19,7 +19,7 @@ module.exports = {
   /*
   ** Global CSS
   */
-  css: ['~static/css/main.css'],
+  css: [{src: 'static/sass/base.sass', lang: 'sass?indentedSyntax=true'}],
   /*
   ** Customize the progress-bar color
   */
@@ -31,7 +31,7 @@ module.exports = {
     /*
      ** Run ESLINT on save
      */
-    extend (config, ctx) {
+    extend(config, ctx) {
       if (ctx.isClient) {
         config.module.rules.push({
           enforce: 'pre',

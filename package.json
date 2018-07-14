@@ -21,6 +21,7 @@
     "lodash": "^4.17.10",
     "mongoose": "4.10.6",
     "nuxt": "latest",
+    "pug": "^2.0.3",
     "querystring": "^0.2.0",
     "ramda": "^0.25.0",
     "request": "^2.87.0",

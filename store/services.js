@@ -1,6 +1,6 @@
 import axios from 'axios'
 
-const baseUrl = ''
+const baseUrl = 'http://rapapi.org/mockjsdata/27263/'
 
 class Services {
   /**
@@ -125,6 +125,15 @@ class Services {
       house: house,
       profession: profession
     })
+  }
+  fetchCharacter() {
+    return axios.get(`${baseUrl}wiki/characters`)
+  }
+  fetchHouses() {
+    return axios.get(`${baseUrl}wiki/houses`)
+  }
+  fetchCities() {
+    return axios.get(`${baseUrl}wiki/cities`)
   }
 }
 
