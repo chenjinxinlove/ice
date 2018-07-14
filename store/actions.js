@@ -18,5 +18,11 @@ export default {
   async fetchCities({ state }) {
     const res = await Services.fetchCities()
     state.cities = res.data.data
+  },
+  async focusHouse({ state }, _id) {
+    if (_id === state.focusHouse._id) return
+    const res = await Services.focusHouse(_id)
+    state.focusHouse = res.data
+    return res
   }
 }

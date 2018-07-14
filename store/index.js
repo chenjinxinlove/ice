@@ -9,7 +9,8 @@ const createStore = () => {
       baseUrl: 'http://veyuxb.natappfree.cc',
       houses: [],
       cities: [],
-      characters: []
+      characters: [],
+      focusHouse: {}
     },
     getters,
     actions,
