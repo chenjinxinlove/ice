@@ -1,4 +1,5 @@
 import Services from './services'
+import { async } from '../server/controllers/wechat'
 
 export default {
   getWechatSignature({ commit }, url) {
@@ -24,5 +25,12 @@ export default {
     const res = await Services.focusHouse(_id)
     state.focusHouse = res.data
     return res
+  },
+  async focusCharacter({ state }, _id) {
+    if (_id === state.focusCharacter._id) return
+    const res = await Services.focusCharacter(_id)
+    state.focusCharacter = res.data
+    return res
   }
+
 }
