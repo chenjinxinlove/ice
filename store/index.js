@@ -11,9 +11,12 @@ const createStore = () => {
       cities: [],
       products: [],
       characters: [],
+      focusProduct: {},
       shoppingScroll: 0,
       focusHouse: {},
-      focusCharacter: {}
+      focusCharacter: {},
+      authUser: {},
+      payments: {}
     },
     getters,
     actions,

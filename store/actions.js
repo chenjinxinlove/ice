@@ -39,6 +39,18 @@ export default {
     console.log(res.data)
     state.products = res.data
     return res
+  },
+  async ß({ state }, _id) {
+    if (_id === state.focusProduct._id) return
+    const res = await Services.focusProduct(_id)
+    state.focusProduct = res.data
+    return res
+  },
+  async fetchPayments({ state }) {
+    let { data } = await Services.getPayments()
+    console.log(data)
+    state.payments = data
+    return data
   }
 
 }

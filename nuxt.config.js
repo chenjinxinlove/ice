@@ -14,6 +14,10 @@ module.exports = {
     ],
     script: [
       { src: 'https://res.wx.qq.com/open/js/jweixin-1.2.0.js' }
+    ],
+    plugins: [
+    { src: '~plugins/swiper.js', ssr: false },
+    { src: '~plugins/flexible.js', ssr: false }ß
     ]
   },
   /*
