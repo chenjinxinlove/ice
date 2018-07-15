@@ -1,5 +1,6 @@
 import Services from './services'
 import { async } from '../server/controllers/wechat'
+import async from '../.nuxt/server'
 
 export default {
   getWechatSignature({ commit }, url) {
@@ -30,6 +31,13 @@ export default {
     if (_id === state.focusCharacter._id) return
     const res = await Services.focusCharacter(_id)
     state.focusCharacter = res.data
+    return res
+  },
+  async fetchProducts({ state }) {
+    const res = await Services.allProducts()
+
+    console.log(res.data)
+    state.products = res.data
     return res
   }
 

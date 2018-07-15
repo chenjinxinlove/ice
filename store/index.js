@@ -9,7 +9,9 @@ const createStore = () => {
       baseUrl: 'http://veyuxb.natappfree.cc',
       houses: [],
       cities: [],
+      products: [],
       characters: [],
+      shoppingScroll: 0,
       focusHouse: {},
       focusCharacter: {}
     },
