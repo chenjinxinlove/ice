@@ -17,7 +17,7 @@ module.exports = {
     ],
     plugins: [
     { src: '~plugins/swiper.js', ssr: false },
-    { src: '~plugins/flexible.js', ssr: false }ß
+    { src: '~plugins/flexible.js', ssr: false }
     ]
   },
   /*

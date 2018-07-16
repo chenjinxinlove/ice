@@ -1,5 +1,5 @@
 Arguments: 
-  /usr/local/bin/node /usr/local/bin/yarn add sha1 --save
+  /usr/local/bin/node /usr/local/bin/yarn
 
 PATH: 
   /usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin
@@ -21,32 +21,82 @@ npm manifest:
     "author": "chenjinxinlove <505150704@qq.com>",
     "private": true,
     "scripts": {
-      "dev": "backpack dev",
+      "dev": "nodemon -w ./server -w ./start.js --exec node ./start.js",
       "build": "nuxt build && backpack build",
       "start": "cross-env NODE_ENV=production node build/main.js",
       "precommit": "npm run lint",
       "lint": "eslint --ext .js,.vue --ignore-path .gitignore ."
     },
     "dependencies": {
-      "cross-env": "^5.0.1",
-      "koa": "^2.4.1",
-      "nuxt": "latest",
-      "ramda": "^0.25.0",
-      "source-map-support": "^0.4.15"
+      "awe-dnd": "^0.3.0",
+      "axios": "^0.16.2",
+      "bcrypt": "^1.0.2",
+      "cheerio": "^1.0.0-rc.2",
+      "cheerio-advanced-selectors": "^1.1.1",
+      "cloudinary": "^1.9.0",
+      "cross-env": "^5.0.0",
+      "crypto": "^0.0.3",
+      "css-loader": "^1.0.0",
+      "firebase": "^4.1.2",
+      "firebase-admin": "^5.0.0",
+      "glob": "^7.1.2",
+      "graphql": "^0.10.1",
+      "graphql-date": "^1.0.3",
+      "graphql-server-koa": "^0.8.3",
+      "heredoc": "^1.3.1",
+      "koa": "^2.0.0",
+      "koa-bodyparser": "next",
+      "koa-router": "^7.2.0",
+      "koa-session": "^5.3.0",
+      "lodash": "^4.17.4",
+      "mongoose": "^4.10.6",
+      "node-pre-gyp": "^0.10.3",
+      "node-sass": "^4.5.3",
+      "nuxt": "~1.0.0-alpha1",
+      "promise-polyfill": "^6.0.2",
+      "pug": "^2.0.0-rc.2",
+      "qiniu": "^6.1.13",
+      "qiniu-web-uploader": "^2.1.2",
+      "ramda": "^0.24.1",
+      "random-token": "^0.0.8",
+      "raw-body": "^2.2.0",
+      "request-promise": "^4.2.1",
+      "sass-loader": "^6.0.5",
+      "sha1": "^1.1.1",
+      "socks5-http-client": "^1.0.2",
+      "source-map-support": "^0.4.15",
+      "speakeasy": "^2.0.0",
+      "vue-awesome-swiper": "^2.5.0",
+      "vue-loader": "^15.2.4",
+      "vue-style-loader": "^4.1.0",
+      "wechat-pay": "^0.2.5",
+      "xml2js": "^0.4.17",
+      "xss": "^0.3.3"
     },
     "devDependencies": {
-      "babel-eslint": "^7.1.1",
-      "backpack-core": "^0.3.0",
+      "babel-core": "^6.25.0",
+      "babel-eslint": "^7.2.3",
+      "babel-plugin-module-alias": "^1.6.0",
+      "babel-plugin-transform-decorators-legacy": "^1.3.4",
+      "babel-polyfill": "^6.23.0",
+      "babel-preset-latest-node": "^0.2.2",
+      "babel-preset-stage-3": "^6.24.1",
+      "backpack-core": "^0.4.0-rc1",
       "eslint": "^3.13.1",
-      "eslint-loader": "^1.9.0",
       "eslint-config-standard": "^10.2.1",
+      "eslint-loader": "^1.7.1",
       "eslint-plugin-html": "^2.0.3",
-      "eslint-plugin-import": "^2.2.0",
-      "eslint-plugin-node": "^4.2.2",
+      "eslint-plugin-import": "^2.3.0",
+      "eslint-plugin-node": "^5.0.0",
       "eslint-plugin-promise": "^3.4.0",
       "eslint-plugin-standard": "^3.0.1",
       "nodemon": "^1.11.0",
-      "scmp": "^2.0.0"
+      "pm2": "^2.5.0",
+      "qshell": "^0.2.0",
+      "sass": "^1.9.2",
+      "sass-loader": "^6.0.7",
+      "scmp": "^2.0.0",
+      "webpack": "3.0.0"
     }
   }
 
@@ -57,4 +107,189 @@ Lockfile:
   No lockfile
 
 Trace: 
-  Error: ENOENT: no such file or directory, copyfile '/Users/chenjinxin/Library/Caches/Yarn/v1/npm-inherits-2.0.1-b17d08d326b4423e568eff719f91b0b1cbdf69f1/LICENSE' -> '/Users/chenjinxin/chenjinxin/code/node/ice/node_modules/assert/node_modules/inherits/LICENSE'
+  Error: /Users/chenjinxin/chenjinxin/code/node/ice/node_modules/bcrypt: Command failed.
+  Exit code: 1
+  Command: sh
+  Arguments: -c node-pre-gyp install --fallback-to-build
+  Directory: /Users/chenjinxin/chenjinxin/code/node/ice/node_modules/bcrypt
+  Output:
+  node-pre-gyp info it worked if it ends with ok
+  node-pre-gyp info using node-pre-gyp@0.6.36
+  node-pre-gyp info using node@10.5.0 | darwin | x64
+  node-pre-gyp info check checked for "/Users/chenjinxin/chenjinxin/code/node/ice/node_modules/bcrypt/lib/binding/bcrypt_lib.node" (not found)
+  node-pre-gyp http GET https://github.com/kelektiv/node.bcrypt.js/releases/download/v1.0.3/bcrypt_lib-v1.0.3-node-v64-darwin-x64.tar.gz
+  node-pre-gyp http 404 https://github.com/kelektiv/node.bcrypt.js/releases/download/v1.0.3/bcrypt_lib-v1.0.3-node-v64-darwin-x64.tar.gz
+  node-pre-gyp ERR! Tried to download(404): https://github.com/kelektiv/node.bcrypt.js/releases/download/v1.0.3/bcrypt_lib-v1.0.3-node-v64-darwin-x64.tar.gz 
+  node-pre-gyp ERR! Pre-built binaries not found for bcrypt@1.0.3 and node@10.5.0 (node-v64 ABI) (falling back to source compile with node-gyp) 
+  node-pre-gyp http 404 status code downloading tarball https://github.com/kelektiv/node.bcrypt.js/releases/download/v1.0.3/bcrypt_lib-v1.0.3-node-v64-darwin-x64.tar.gz 
+  gyp info it worked if it ends with ok
+  gyp info using node-gyp@3.7.0
+  gyp info using node@10.5.0 | darwin | x64
+  gyp info ok 
+  gyp info it worked if it ends with ok
+  gyp info using node-gyp@3.7.0
+  gyp info using node@10.5.0 | darwin | x64
+  gyp info spawn /usr/local/bin/python2
+  gyp info spawn args [ '/Users/chenjinxin/chenjinxin/code/node/ice/node_modules/node-gyp/gyp/gyp_main.py',
+  gyp info spawn args   'binding.gyp',
+  gyp info spawn args   '-f',
+  gyp info spawn args   'make',
+  gyp info spawn args   '-I',
+  gyp info spawn args   '/Users/chenjinxin/chenjinxin/code/node/ice/node_modules/bcrypt/build/config.gypi',
+  gyp info spawn args   '-I',
+  gyp info spawn args   '/Users/chenjinxin/chenjinxin/code/node/ice/node_modules/node-gyp/addon.gypi',
+  gyp info spawn args   '-I',
+  gyp info spawn args   '/Users/chenjinxin/.node-gyp/10.5.0/include/node/common.gypi',
+  gyp info spawn args   '-Dlibrary=shared_library',
+  gyp info spawn args   '-Dvisibility=default',
+  gyp info spawn args   '-Dnode_root_dir=/Users/chenjinxin/.node-gyp/10.5.0',
+  gyp info spawn args   '-Dnode_gyp_dir=/Users/chenjinxin/chenjinxin/code/node/ice/node_modules/node-gyp',
+  gyp info spawn args   '-Dnode_lib_file=/Users/chenjinxin/.node-gyp/10.5.0/<(target_arch)/node.lib',
+  gyp info spawn args   '-Dmodule_root_dir=/Users/chenjinxin/chenjinxin/code/node/ice/node_modules/bcrypt',
+  gyp info spawn args   '-Dnode_engine=v8',
+  gyp info spawn args   '--depth=.',
+  gyp info spawn args   '--no-parallel',
+  gyp info spawn args   '--generator-output',
+  gyp info spawn args   'build',
+  gyp info spawn args   '-Goutput_dir=.' ]
+  node-pre-gyp ERR! Tried to download(undefined): https://github.com/kelektiv/node.bcrypt.js/releases/download/v1.0.3/bcrypt_lib-v1.0.3-node-v64-darwin-x64.tar.gz 
+  node-pre-gyp ERR! Pre-built binaries not found for bcrypt@1.0.3 and node@10.5.0 (node-v64 ABI) (falling back to source compile with node-gyp) 
+  node-pre-gyp http Connection closed while downloading tarball file 
+  gyp info it worked if it ends with ok
+  gyp info using node-gyp@3.7.0
+  gyp info using node@10.5.0 | darwin | x64
+  gyp info ok 
+  gyp info it worked if it ends with ok
+  gyp info using node-gyp@3.7.0
+  gyp info using node@10.5.0 | darwin | x64
+  gyp info spawn /usr/local/bin/python2
+  gyp info spawn args [ '/Users/chenjinxin/chenjinxin/code/node/ice/node_modules/node-gyp/gyp/gyp_main.py',
+  gyp info spawn args   'binding.gyp',
+  gyp info spawn args   '-f',
+  gyp info spawn args   'make',
+  gyp info spawn args   '-I',
+  gyp info spawn args   '/Users/chenjinxin/chenjinxin/code/node/ice/node_modules/bcrypt/build/config.gypi',
+  gyp info spawn args   '-I',
+  gyp info spawn args   '/Users/chenjinxin/chenjinxin/code/node/ice/node_modules/node-gyp/addon.gypi',
+  gyp info spawn args   '-I',
+  gyp info spawn args   '/Users/chenjinxin/.node-gyp/10.5.0/include/node/common.gypi',
+  gyp info spawn args   '-Dlibrary=shared_library',
+  gyp info spawn args   '-Dvisibility=default',
+  gyp info spawn args   '-Dnode_root_dir=/Users/chenjinxin/.node-gyp/10.5.0',
+  gyp info spawn args   '-Dnode_gyp_dir=/Users/chenjinxin/chenjinxin/code/node/ice/node_modules/node-gyp',
+  gyp info spawn args   '-Dnode_lib_file=/Users/chenjinxin/.node-gyp/10.5.0/<(target_arch)/node.lib',
+  gyp info spawn args   '-Dmodule_root_dir=/Users/chenjinxin/chenjinxin/code/node/ice/node_modules/bcrypt',
+  gyp info spawn args   '-Dnode_engine=v8',
+  gyp info spawn args   '--depth=.',
+  gyp info spawn args   '--no-parallel',
+  gyp info spawn args   '--generator-output',
+  gyp info spawn args   'build',
+  gyp info spawn args   '-Goutput_dir=.' ]
+  gyp info ok 
+  gyp info ok 
+  gyp info it worked if it ends with ok
+  gyp info it worked if it ends with ok
+  gyp info using node-gyp@3.7.0
+  gyp info using node@10.5.0 | darwin | x64
+  gyp info using node-gyp@3.7.0
+  gyp info using node@10.5.0 | darwin | x64
+  gyp info spawn make
+  gyp info spawn make
+  gyp gyp info spawn args [ 'BUILDTYPE=Release', '-C', 'build' ]
+  info spawn args [ 'BUILDTYPE=Release', '-C', 'build' ]
+    CXX(target) Release/obj.target/bcrypt_lib/src/blowfish.o
+    CXX(target) Release/obj.target/bcrypt_lib/src/blowfish.o
+  rm: ./Release/.deps/Release/obj.target/bcrypt_lib/src/blowfish.o.d.raw: No such file or directory
+  make: *** [Release/obj.target/bcrypt_lib/src/blowfish.o] Error 1
+  gyp ERR! build error 
+  gyp ERR! stack Error: `make` failed with exit code: 2
+  gyp ERR! stack     at ChildProcess.onExit (/Users/chenjinxin/chenjinxin/code/node/ice/node_modules/node-gyp/lib/build.js:262:23)
+  gyp ERR! stack     at ChildProcess.emit (events.js:182:13)
+  gyp ERR! stack     at Process.ChildProcess._handle.onexit (internal/child_process.js:237:12)
+  gyp ERR! System Darwin 17.5.0
+  gyp ERR! command "/usr/local/bin/node" "/Users/chenjinxin/chenjinxin/code/node/ice/node_modules/node-gyp/bin/node-gyp.js" "build" "--fallback-to-build" "--module=/Users/chenjinxin/chenjinxin/code/node/ice/node_modules/bcrypt/lib/binding/bcrypt_lib.node" "--module_name=bcrypt_lib" "--module_path=/Users/chenjinxin/chenjinxin/code/node/ice/node_modules/bcrypt/lib/binding"
+  gyp ERR! cwd /Users/chenjinxin/chenjinxin/code/node/ice/node_modules/bcrypt
+  gyp ERR! node -v v10.5.0
+  gyp ERR! node-gyp -v v3.7.0
+  gyp ERR! not ok 
+  node-pre-gyp ERR! build error 
+  node-pre-gyp ERR! stack Error: Failed to execute '/usr/local/bin/node /Users/chenjinxin/chenjinxin/code/node/ice/node_modules/node-gyp/bin/node-gyp.js build --fallback-to-build --module=/Users/chenjinxin/chenjinxin/code/node/ice/node_modules/bcrypt/lib/binding/bcrypt_lib.node --module_name=bcrypt_lib --module_path=/Users/chenjinxin/chenjinxin/code/node/ice/node_modules/bcrypt/lib/binding' (1)
+  node-pre-gyp ERR! stack     at ChildProcess.<anonymous> (/Users/chenjinxin/chenjinxin/code/node/ice/node_modules/bcrypt/node_modules/node-pre-gyp/lib/util/compile.js:83:29)
+  node-pre-gyp ERR! stack     at ChildProcess.emit (events.js:182:13)
+  node-pre-gyp ERR! stack     at maybeClose (internal/child_process.js:961:16)
+  node-pre-gyp ERR! stack     at Process.ChildProcess._handle.onexit (internal/child_process.js:248:5)
+  node-pre-gyp ERR! System Darwin 17.5.0
+  node-pre-gyp ERR! command "/usr/local/bin/node" "/Users/chenjinxin/chenjinxin/code/node/ice/node_modules/bcrypt/node_modules/.bin/node-pre-gyp" "install" "--fallback-to-build"
+  node-pre-gyp ERR! cwd /Users/chenjinxin/chenjinxin/code/node/ice/node_modules/bcrypt
+  node-pre-gyp ERR! node -v v10.5.0
+  node-pre-gyp ERR! node-pre-gyp -v v0.6.36
+  node-pre-gyp ERR! not ok 
+  Failed to execute '/usr/local/bin/node /Users/chenjinxin/chenjinxin/code/node/ice/node_modules/node-gyp/bin/node-gyp.js build --fallback-to-build --module=/Users/chenjinxin/chenjinxin/code/node/ice/node_modules/bcrypt/lib/binding/bcrypt_lib.node --module_name=bcrypt_lib --module_path=/Users/chenjinxin/chenjinxin/code/node/ice/node_modules/bcrypt/lib/binding' (1)
+    CXX(target) Release/obj.target/bcrypt_lib/src/bcrypt.o
+    CXX(target) Release/obj.target/bcrypt_lib/src/bcrypt_node.o
+  In file included from ../src/bcrypt_node.cc:1:
+  In file included from ../node_modules/nan/nan.h:192:
+  ../node_modules/nan/nan_maybe_43_inl.h:112:15: error: no member named 'ForceSet' in 'v8::Object'
+    return obj->ForceSet(isolate->GetCurrentContext(), key, value, attribs);
+           ~~~  ^
+  In file included from ../src/bcrypt_node.cc:1:
+  ../node_modules/nan/nan.h:834:18: warning: 'MakeCallback' is deprecated: Use MakeCallback(..., async_context) [-Wdeprecated-declarations]
+      return node::MakeCallback(
+                   ^
+  /Users/chenjinxin/.node-gyp/10.5.0/include/node/node.h:171:1: note: 'MakeCallback' has been explicitly marked deprecated here
+  NODE_DEPRECATED("Use MakeCallback(..., async_context)",
+  ^
+  /Users/chenjinxin/.node-gyp/10.5.0/include/node/node.h:88:20: note: expanded from macro 'NODE_DEPRECATED'
+      __attribute__((deprecated(message))) declarator
+                     ^
+  In file included from ../src/bcrypt_node.cc:1:
+  ../node_modules/nan/nan.h:849:18: warning: 'MakeCallback' is deprecated: Use MakeCallback(..., async_context) [-Wdeprecated-declarations]
+      return node::MakeCallback(
+                   ^
+  /Users/chenjinxin/.node-gyp/10.5.0/include/node/node.h:164:1: note: 'MakeCallback' has been explicitly marked deprecated here
+  NODE_DEPRECATED("Use MakeCallback(..., async_context)",
+  ^
+  /Users/chenjinxin/.node-gyp/10.5.0/include/node/node.h:88:20: note: expanded from macro 'NODE_DEPRECATED'
+      __attribute__((deprecated(message))) declarator
+                     ^
+  In file included from ../src/bcrypt_node.cc:1:
+  ../node_modules/nan/nan.h:864:18: warning: 'MakeCallback' is deprecated: Use MakeCallback(..., async_context) [-Wdeprecated-declarations]
+      return node::MakeCallback(
+                   ^
+  /Users/chenjinxin/.node-gyp/10.5.0/include/node/node.h:157:1: note: 'MakeCallback' has been explicitly marked deprecated here
+  NODE_DEPRECATED("Use MakeCallback(..., async_context)",
+  ^
+  /Users/chenjinxin/.node-gyp/10.5.0/include/node/node.h:88:20: note: expanded from macro 'NODE_DEPRECATED'
+      __attribute__((deprecated(message))) declarator
+                     ^
+  In file included from ../src/bcrypt_node.cc:1:
+  ../node_modules/nan/nan.h:1473:31: warning: 'MakeCallback' is deprecated: Use MakeCallback(..., async_context) [-Wdeprecated-declarations]
+      return scope.Escape(node::MakeCallback(
+                                ^
+  /Users/chenjinxin/.node-gyp/10.5.0/include/node/node.h:171:1: note: 'MakeCallback' has been explicitly marked deprecated here
+  NODE_DEPRECATED("Use MakeCallback(..., async_context)",
+  ^
+  /Users/chenjinxin/.node-gyp/10.5.0/include/node/node.h:88:20: note: expanded from macro 'NODE_DEPRECATED'
+      __attribute__((deprecated(message))) declarator
+                     ^
+  4 warnings and 1 error generated.
+  make: *** [Release/obj.target/bcrypt_lib/src/bcrypt_node.o] Error 1
+  gyp ERR! build error 
+  gyp ERR! stack Error: `make` failed with exit code: 2
+  gyp ERR! stack     at ChildProcess.onExit (/Users/chenjinxin/chenjinxin/code/node/ice/node_modules/node-gyp/lib/build.js:262:23)
+  gyp ERR! stack     at ChildProcess.emit (events.js:182:13)
+  gyp ERR! stack     at Process.ChildProcess._handle.onexit (internal/child_process.js:237:12)
+  gyp ERR! System Darwin 17.5.0
+  gyp ERR! command "/usr/local/bin/node" "/Users/chenjinxin/chenjinxin/code/node/ice/node_modules/node-gyp/bin/node-gyp.js" "build" "--fallback-to-build" "--module=/Users/chenjinxin/chenjinxin/code/node/ice/node_modules/bcrypt/lib/binding/bcrypt_lib.node" "--module_name=bcrypt_lib" "--module_path=/Users/chenjinxin/chenjinxin/code/node/ice/node_modules/bcrypt/lib/binding"
+  gyp ERR! cwd /Users/chenjinxin/chenjinxin/code/node/ice/node_modules/bcrypt
+  gyp ERR! node -v v10.5.0
+  gyp ERR! node-gyp -v v3.7.0
+  gyp ERR! not ok
+      at ProcessTermError.MessageError (/usr/local/lib/node_modules/yarn/lib/cli.js:186:110)
+      at new ProcessTermError (/usr/local/lib/node_modules/yarn/lib/cli.js:226:113)
+      at ChildProcess.<anonymous> (/usr/local/lib/node_modules/yarn/lib/cli.js:30281:17)
+      at ChildProcess.emit (events.js:182:13)
+      at maybeClose (internal/child_process.js:961:16)
+      at Socket.stream.socket.on (internal/child_process.js:380:11)
+      at Socket.emit (events.js:182:13)
+      at Pipe._handle.close (net.js:595:12)
