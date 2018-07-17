@@ -235,7 +235,6 @@ export const getSwornMembers = async () => {
   writeFileSync(jsonPath('wikiHouses.json'), JSON.stringify(houses, null, 4), 'utf8')
 }
 
-
 /**
  * 将 IMDb 上原始的封面以及剧照，上传到七牛上
  */
