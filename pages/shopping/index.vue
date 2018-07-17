@@ -51,4 +51,4 @@ export default {
 }
 </script>
 
-<style lang="sass" src='~static/sass/shopping.sass'></style>
+<style lang="sass" src='../../static/sass/shopping.sass'></style>

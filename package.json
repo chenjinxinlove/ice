@@ -37,7 +37,6 @@
     "lodash": "^4.17.4",
     "mongoose": "^4.10.6",
     "node-pre-gyp": "^0.10.3",
-    "node-sass": "^4.9.2",
     "nuxt": "~1.0.0-alpha1",
     "promise-polyfill": "^6.0.2",
     "pug": "^2.0.0-rc.2",
@@ -78,9 +77,11 @@
     "eslint-plugin-node": "^5.0.0",
     "eslint-plugin-promise": "^3.4.0",
     "eslint-plugin-standard": "^3.0.1",
+    "node-sass": "^4.9.2",
     "nodemon": "^1.11.0",
     "pm2": "^2.5.0",
     "qshell": "^0.2.0",
+    "sass-loader": "^7.0.3",
     "scmp": "^2.0.0",
     "webpack": "3.0.0"
   }

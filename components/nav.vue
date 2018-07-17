@@ -47,4 +47,4 @@ export default {
 }
 </script>
 
-<style lang="sass" src='~static/sass/nav.sass'></style>
+<style lang="sass" src='../static/sass/nav.sass'></style>

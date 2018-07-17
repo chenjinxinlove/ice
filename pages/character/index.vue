@@ -51,4 +51,4 @@ export default {
 }
 </script>
 
-<style scoped lang="sass" src='~static/sass/characters.sass'></style>
+<style scoped lang="sass" src='../../static/sass/characters.sass'></style>

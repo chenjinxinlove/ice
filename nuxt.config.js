@@ -1,49 +1,54 @@
 module.exports = {
-  /*
-  ** Headers of the page
-  */
   head: {
-    title: 'starter',
+    title: 'loading',
     meta: [
       { charset: 'utf-8' },
-      { name: 'viewport', content: 'width=device-width, initial-scale=1' },
-      { hid: 'description', name: 'description', content: 'Nuxt.js project' }
+      { hid: 'description', name: 'description', content: '冰与火之歌' }
     ],
     link: [
-      { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }
+      { rel: 'icon', type: 'image/x-icon', href: 'static/favicon.ico' }
     ],
     script: [
       { src: 'https://res.wx.qq.com/open/js/jweixin-1.2.0.js' }
-    ],
-    plugins: [
-    { src: '~plugins/swiper.js', ssr: false },
-    { src: '~plugins/flexible.js', ssr: false }
     ]
   },
-  /*
-  ** Global CSS
-  */
-  css: [{src: 'static/sass/base.sass', lang: 'sass?indentedSyntax=true'}],
-  /*
-  ** Customize the progress-bar color
-  */
-  loading: { color: '#3B8070' },
-  /*
-   ** Build configuration
-   */
-  build: {
-    /*
-     ** Run ESLINT on save
-     */
-    extend(config, ctx) {
-      if (ctx.isClient) {
-        config.module.rules.push({
-          enforce: 'pre',
-          test: /\.(js|vue)$/,
-          loader: 'eslint-loader',
-          exclude: /(node_modules)/
-        })
-      }
+  css: [
+    {
+      src: 'static/sass/base.sass',
+      lang: 'sass?indentedSyntax=true'
+    },
+    {
+      src: 'swiper/dist/css/swiper.css'
     }
+  ],
+  plugins: [
+    { src: '~plugins/swiper.js', ssr: false },
+    { src: '~plugins/flexible.js', ssr: false }
+  ],
+  build: {
+    // extend (config, ctx) {
+    //   if (ctx.isClient) {
+    //     config.module.rules.push({
+    //       enforce: 'pre',
+    //       test: /\.(js|vue)$/,
+    //       loader: 'eslint-loader',
+    //       exclude: /(node_modules)/
+    //     })
+    //   }
+    // },
+    loaders: [
+      {
+        test: /\.(png|jpe?g|gif|svg)$/,
+        loader: 'url-loader',
+        query: {
+          limit: 10000,
+          name: 'img/[name].[hash].[ext]'
+        }
+      }
+    ]
+  },
+  loading: { color: '#F44336' },
+  performance: {
+    prefetch: false
   }
 }

@@ -1,6 +1,4 @@
 import Services from './services'
-import { async } from '../server/controllers/wechat'
-import async from '../.nuxt/server'
 
 export default {
   getWechatSignature({ commit }, url) {

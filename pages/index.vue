@@ -63,6 +63,6 @@ export default {
 }
 </script>
 
-<style scoped lang='sass' src='~static/sass/index.sass'>
+<style scoped lang='sass' src='../static/sass/index.sass'>
 
 </style>

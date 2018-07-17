@@ -1,6 +1,6 @@
 <template>
   <section class="container">
-    <img src="../static/img/logo.png" alt="Nuxt.js Logo" class="logo" />
+    <img src="../static/images/logo.png" alt="Nuxt.js Logo" class="logo" />
   </section>
 </template>
 <script>

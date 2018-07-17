@@ -49,4 +49,4 @@ export default {
 }
 </script>
 
-<style scoped lang="sass" src='~static/sass/house.sass'></style>
+<style scoped lang="sass" src='../../static/sass/house.sass'></style>

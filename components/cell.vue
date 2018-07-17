@@ -16,8 +16,8 @@ export default {
 </script>
 
 <style lang="sass">
-@import '~static/sass/color'
-@import '~static/sass/mixin'
+@import '../static/sass/color'
+@import '../static/sass/mixin'
 
 .cell
   width: 100%
@@ -38,4 +38,3 @@ export default {
     +font-dpr(33px)
     color: $grey-800
 </style>
-≈ß
