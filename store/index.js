@@ -6,17 +6,24 @@ import getters from './getters'
 const createStore = () => {
   return new Vuex.Store({
     state: {
-      baseUrl: 'http://veyuxb.natappfree.cc',
-      houses: [],
-      cities: [],
-      products: [],
-      characters: [],
-      focusProduct: {},
+      baseUrl: 'http://4i5kkb.natappfree.cc',
+      imageCDN: '你的七牛 CDN',
+      homePageScroll: {
+        'home': 0,
+        'house': 0
+      },
+      APICharacters: null,
+      IMDb: null,
+      authUser: null,
       shoppingScroll: 0,
+      houses: [],
+      characters: [],
       focusHouse: {},
       focusCharacter: {},
-      authUser: {},
-      payments: {}
+      user: null,
+      products: [],
+      focusProduct: {},
+      payments: []
     },
     getters,
     actions,

@@ -38,7 +38,7 @@ export default {
   },
   computed: {
     ...mapState({
-      // imageCDN: 'imageCDN',
+      imageCDN: 'imageCDN',
       house: 'focusHouse'
     })
   },

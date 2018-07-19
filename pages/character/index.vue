@@ -3,7 +3,7 @@
   .focusCharacters-header
     img.focusCharacters-header-bg(v-if='character.images', :src="character.images[character.images.length - 1]")
     .focusCharacters-media
-      img(v-if='character.profile', :src='character.profile')
+      img(v-if='character.profile', :src="imageCDN + character.profile + '?imageView2/1/w/280/h/440/format/jpg/q/75|imageslim'")
       .focusCharacters-text
         .names
           p.cname {{ character.cname }}
@@ -40,7 +40,7 @@ export default {
   },
   computed: {
     ...mapState({
-      // imageCDN: 'imageCDN',
+      imageCDN: 'imageCDN',
       character: 'focusCharacter'
     })
   },
