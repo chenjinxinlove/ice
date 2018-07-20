@@ -6,14 +6,14 @@ import _ from 'lodash'
 import xss from 'xss'
 import R from 'ramda'
 
-const Character = mongoose.model('Character')
-const House = mongoose.model('House')
-const Book = mongoose.model('Book')
-const IMDb = mongoose.model('IMDb')
-const User = mongoose.model('User')
+// const Character = mongoose.model('Character')
+// const House = mongoose.model('House')
+// const Book = mongoose.model('Book')
+// const IMDb = mongoose.model('IMDb')
+// const User = mongoose.model('User')
 const Product = mongoose.model('Product')
-const Payment = mongoose.model('Payment')
-const ExamResult = mongoose.model('ExamResult')
+// const Payment = mongoose.model('Payment')
+// const ExamResult = mongoose.model('ExamResult')
 
 const NINE_HOUSES = [
   `House Stark of Winterfell`,

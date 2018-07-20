@@ -37,12 +37,19 @@ export default {
             'downloadImage',
             'onMenuShareTimeline',
             'hideAllNonBaseMenuItem',
-            'showMenuItems'
+            'showMenuItems',
+            'scanQRCode'
           ]
         })
         wx.ready(function () {
-          wx.hideAllNonBaseMenuItem()
-          console.log('success')
+          wx.scanQRCode({
+              needResult: 0,
+              scanType: ['qrCode', 'barCode'],
+              success: function (res) {
+                var result = res.resultStr
+                console.log(result)
+              }
+            })
         })
         wx.error(function (res) {
 
