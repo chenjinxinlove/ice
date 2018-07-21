@@ -38,7 +38,7 @@ export const database = app => {
     // const Character = mongoose.model('Character')
     const WikiCharacter = mongoose.model('WikiCharacter')
     const WikiHouse = mongoose.model('WikiHouse')
-    // const User = mongoose.model('User')
+    const User = mongoose.model('User')
 
     // 说明第一次初始化插入数据已经完成
 
@@ -57,8 +57,8 @@ export const database = app => {
     let existwikiHouses = await WikiHouse.find({}).exec()
     if (!existwikiHouses.length) WikiHouse.insertMany(wikiHouses)
 
-    // let user = await User.findOne({email: '你的默认账号'}).exec()
-    // if (!user) new User({email: '123@qq.com', password: '12345', role: 'admin'}).save()
+    let user = await User.findOne({email: '123@qq.com'}).exec()
+    if (!user) new User({email: '123@qq.com', password: '12345', role: 'admin'}).save()
   })
 }
 

@@ -10,7 +10,7 @@ import R from 'ramda'
 // const House = mongoose.model('House')
 // const Book = mongoose.model('Book')
 // const IMDb = mongoose.model('IMDb')
-// const User = mongoose.model('User')
+const User = mongoose.model('User')
 const Product = mongoose.model('Product')
 // const Payment = mongoose.model('Payment')
 // const ExamResult = mongoose.model('ExamResult')
@@ -45,12 +45,11 @@ const NINE_HOUSES = [
 
 // }, typeOf(value))
 
-
 @controller('/api')
 export class DatabaseController {
   @get('db/characters')
   @log
-  async characters (ctx, next) {
+  async characters(ctx, next) {
     var res = await Character
       .find({
         name: { $exists: true },
@@ -66,7 +65,7 @@ export class DatabaseController {
   }
 
   @get('db/IMDb/characters')
-  async IMDbCharacters (ctx, next) {
+  async IMDbCharacters(ctx, next) {
     var res = await IMDb
       .find({
         url: { $exists: true }
@@ -79,7 +78,7 @@ export class DatabaseController {
   }
 
   @get('db/houses')
-  async dbHouses (ctx, next) {
+  async dbHouses(ctx, next) {
     var houses = await House
       .find({
         name: { $exists: true },
@@ -106,7 +105,7 @@ export class DatabaseController {
   }
 
   @get('db/books')
-  async dbBooks (ctx, next) {
+  async dbBooks(ctx, next) {
     var res = await Book
       .find({})
       .exec()
@@ -116,7 +115,7 @@ export class DatabaseController {
 
   @get('products/:_id')
   @log
-  async getProduct (ctx, next) {
+  async getProduct(ctx, next) {
     const { _id } = ctx.params
     console.log(_id)
     if (!_id) return (ctx.body = '_id is required')
@@ -129,7 +128,7 @@ export class DatabaseController {
   }
 
   @get('products')
-  async getProducts (ctx, next) {
+  async getProducts(ctx, next) {
     let { limit = 50 } = ctx.query
     let products = await Product
       .find({})
@@ -140,7 +139,7 @@ export class DatabaseController {
   }
 
   @post('products')
-  async postProducts (ctx, next) {
+  async postProducts(ctx, next) {
     let product = ctx.request.body
     product = {
       title: xss(product.title),
@@ -155,14 +154,13 @@ export class DatabaseController {
     try {
       await product.save()
       ctx.body = product
-
     } catch (e) {
       ctx.throw(501, e)
     }
   }
 
   @put('products')
-  async putProducts (ctx, next) {
+  async putProducts(ctx, next) {
     let body = ctx.request.body
     const { _id } = body
 
@@ -181,14 +179,13 @@ export class DatabaseController {
     try {
       await product.save()
       ctx.body = product
-
     } catch (e) {
       ctx.throw(501, e)
     }
   }
 
   @get('qiniu/token')
-  async qiniuToken (ctx, next) {
+  async qiniuToken(ctx, next) {
     let key = ctx.query.key
     let token = qiniu.uptoken(key)
 
@@ -199,14 +196,14 @@ export class DatabaseController {
   }
 
   @get('users')
-  async dbUsers (ctx, next) {
+  async dbUsers(ctx, next) {
     const res = await User.find({}).exec()
 
     ctx.body = res
   }
 
   @get('users/:id')
-  async dbUser (ctx, next) {
+  async dbUser(ctx, next) {
     const id = ctx.params.id
     const res = await User.findOne({_id: id}).exec()
 
@@ -214,7 +211,7 @@ export class DatabaseController {
   }
 
   @get('payments')
-  async getPayments (ctx, next) {
+  async getPayments(ctx, next) {
     const res = await Payment
       .find({ success: 1 })
       .populate('product user')
@@ -225,7 +222,7 @@ export class DatabaseController {
   @post('login')
   @log
   @required({body: ['email', 'password']})
-  async login (ctx, next) {
+  async login(ctx, next) {
     const { email, password } = ctx.request.body
 
     try {
@@ -235,7 +232,7 @@ export class DatabaseController {
     } catch (e) {
       throw new Error(e)
     }
-    
+
     if (match) {
       ctx.session.user = {
         _id: user._id,
@@ -254,24 +251,24 @@ export class DatabaseController {
         },
         msg: 'ok'
       }
-    } 
+    }
 
     return ctx.body = {
       ret: 1,
       errors: {
         err: 'USER.WRONG_PASSWORD'
       }
-    }   
+    }
   }
 
   @post('logout')
-  async logout (ctx, next) {
+  async logout(ctx, next) {
 
   }
 
   @post('exam')
   @required({ body: ['openid', 'profession', 'house'] })
-  async finishExam (ctx, next) {
+  async finishExam(ctx, next) {
     const sessionOpenid = ctx.session.openid
     const { openid, profession, house } = ctx.request.body
 
