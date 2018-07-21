@@ -1,53 +1,33 @@
-<template>
-  <section class="container">
-    <img src="../static/images/logo.png" alt="Nuxt.js Logo" class="logo" />
-  </section>
+<template lang="pug">
 </template>
+
 <script>
-import { mapState } from 'vuex'
+function getUrlParam(param) {
+  const reg = new RegExp('(^|&)' + param + '=([^&]*)(&|$)')
+  const result = window.location.search.substr(1).match(reg)
+  return result ? decodeURIComponent(result[2]) : null
+}
+
 export default {
-  asyncData({ req }) {
-    return {
-      name: req ? 'server' : 'client'
-    }
-  },
   head() {
     return {
-      title: '测试页面'
+      title: 'loading'
     }
   },
-  computed: {
-    ...mapState([
-      'baseUrl'
-    ])
-  },
   beforeMount() {
-    const url = window.location
+    const url = window.location.href
 
-    this.$store.dispatch('getUserByOAuth', encodeURIComponent(url))
-    .then(res => {
-      if (res.data.success) {
-        console.log(res.data)
+    this.$store.dispatch('getWechatOAuth', url).then(res => {
+      const { data } = res
+      console.log(data)
+      if (data.success) {
+        this.$store.dispatch('setAuthUser', data.user)
+        const visit = '/' + getUrlParam('state')
+        this.$router.replace(visit)
+      } else {
+        throw new Error('用户信息获取失败')
       }
     })
   }
 }
 </script>
-
-<style scoped>
-.title
-{
-  margin-top: 50px;
-}
-.info
-{
-  font-weight: 300;
-  color: #9aabb1;
-  margin: 0;
-  margin-top: 10px;
-}
-.button
-{
-  margin-top: 50px;
-}
-</style>
