@@ -5,6 +5,9 @@ const SALT_WORK_FACTOR = 10
 const MAX_LOGIN_ATTEMPTS = 5
 const LOCK_TIME = 2 * 60 * 60 * 1000
 const Schema = mongoose.Schema
+const ObjectId = Schema.Types.ObjectId
+const Mixed = Schema.Types.Mixed
+
 
 const UserSchema = new Schema({
   openid: [String],

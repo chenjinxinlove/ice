@@ -1,7 +1,7 @@
 const mongoose = require('mongoose')
 const Schema = mongoose.Schema
 
-const TicketSchema = new Schema({
+const TicketSchema = new mongoose.Schema({
   name: String,
   ticket: String,
   expires_in: Number,
@@ -28,13 +28,13 @@ TicketSchema.pre('save', function (next) {
 })
 
 TicketSchema.statics = {
-  async getTicket() {
+  async getTicket () {
     const ticket = await this.findOne({ name: 'ticket' }).exec()
 
     return ticket
   },
 
-  async saveTicket(data) {
+  async saveTicket (data) {
     let ticket = await this.findOne({ name: 'ticket' }).exec()
     if (ticket) {
       ticket.ticket = data.ticket

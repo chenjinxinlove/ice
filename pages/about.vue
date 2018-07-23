@@ -1,7 +1,4 @@
 <template>
-  <section class="container">
-    <img src="../static/images/logo.png" alt="Nuxt.js Logo" class="logo" />
-  </section>
 </template>
 <script>
 // import { mapState } from 'vuex'
