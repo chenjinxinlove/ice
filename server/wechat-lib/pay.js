@@ -1,7 +1,7 @@
 import fs from 'fs'
 import path from 'path'
 import wechatPay from 'wechat-pay'
-// import sms from '../libs/sms'
+import sms from '../libs/sms'
 import config from '../config'
 
 const Payment = wechatPay.Payment
@@ -20,9 +20,9 @@ var initConfig = {
 
 var payment = new Payment(initConfig || {})
 
-exports.getParamsAsync = function(order) {
+exports.getParamsAsync = function (order) {
   return new Promise((resolve, reject) => {
-    payment.getBrandWCPayRequestParams(order, function(err, payargs) {
+    payment.getBrandWCPayRequestParams(order, function (err, payargs) {
       if (err) {
         console.log(err)
         // sms.send(order, 'payment getbrandrequest')
@@ -34,24 +34,24 @@ exports.getParamsAsync = function(order) {
   })
 }
 
-exports.getPayDataAsync = function(req) {
+exports.getPayDataAsync = function (req) {
   return new Promise((resolve, reject) => {
     var data = ''
 
     req.setEncoding('utf8')
-    req.on('data', function(chunk) {
+    req.on('data', function (chunk) {
       data += chunk
     })
-    req.on('end', function() {
+    req.on('end', function () {
       req.rawBody = data
       resolve(data)
     })
   })
 }
 
-exports.getNoticeAsync = function(rawBody) {
+exports.getNoticeAsync = function (rawBody) {
   return new Promise((resolve, reject) => {
-    payment.validate(rawBody, function(err, message) {
+    payment.validate(rawBody, function (err, message) {
       if (err) {
         err.name = 'BadMessage' + err.name
         sms.send(err, 'payment validate rawbody')
@@ -64,12 +64,12 @@ exports.getNoticeAsync = function(rawBody) {
   })
 }
 
-exports.getBillsAsync = function(date) {
+exports.getBillsAsync = function (date) {
   return new Promise((resolve, reject) => {
     payment.downloadBill({
       bill_date: date,
       bill_type: 'ALL'
-    }, function(err, data) {
+    }, function (err, data) {
       if (err) {
         reject(err)
       } else {
@@ -81,9 +81,9 @@ exports.getBillsAsync = function(date) {
   })
 }
 
-exports.getOrdersAsync = function(params) {
+exports.getOrdersAsync = function (params) {
   return new Promise((resolve, reject) => {
-    payment.orderQuery(params, function(err, data) {
+    payment.orderQuery(params, function (err, data) {
       if (err) {
         reject(err)
       } else {
@@ -95,14 +95,14 @@ exports.getOrdersAsync = function(params) {
   })
 }
 
-exports.buildFailXML = function(err) {
+exports.buildFailXML = function (err) {
   return payment.buildXml({
     return_code: 'FAIL',
     return_msg: err.name
   })
 }
 
-exports.buildSuccessXML = function(err) {
+exports.buildSuccessXML = function (err) {
   if (err) throw new Error('XML is not valid')
   return payment.buildXml({
     return_code: 'SUCCESS'
