@@ -7,7 +7,7 @@ export async function getSignatureAsync(url) {
   const token = data.access_token
   const ticketData = await wechatApi.fetchTicket(token)
   const ticket = ticketData.ticket
-
+  console.log(data, ticket)
   let params = wechatApi.sign(ticket, url)
   params.appId = wechatApi.appID
 

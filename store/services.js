@@ -1,6 +1,6 @@
 import axios from 'axios'
 
-const baseUrl = 'http://x9vzw7.natappfree.cc'
+const baseUrl = 'http://vwm2fs.natappfree.cc'
 
 class Services {
   /**

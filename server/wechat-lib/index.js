@@ -113,7 +113,7 @@ export default class Wechat {
 
   async updateTicket(token) {
     const url = api.ticket.get + '&access_token=' + token + '&type=jsapi'
-
+    console.log(url, 'tick_url')
     let data = await this.request({url: url})
     const now = (new Date().getTime())
     const expiresIn = now + (data.expires_in - 20) * 1000
